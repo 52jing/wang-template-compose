@@ -1,0 +1,24 @@
+version: "3"
+services:
+  frontend:
+    image: temp-web:0.1
+    ports:
+      - "8001:80"
+    restart: always
+  backend:
+    image: temp:0.1
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./backend/config:/opt/config"
+    restart: always
+  nginx:
+    image: nginx:1.25
+    ports:
+      - "8500:8500"
+    volumes:
+      - "./nginx/server.conf:/etc/nginx/conf.d/server.conf"
+    depends_on:
+      - frontend
+      - backend
+    restart: always

@@ -1,0 +1,65 @@
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8000
+  servlet:
+    # 应用的访问路径
+    context-path: /api
+
+spring:
+  flyway:
+    locations:
+      - classpath:db/migration/h2
+
+mybatis-flex:
+  # 数据源配置
+  datasource:
+    # 主库数据源
+    master:
+      url: jdbc:h2:file:./data/testdb
+
+# 应用配置
+app:
+  namespace: wangTemplate
+  secret: abcdefghijklmnopqrstuvwxyz
+  debug: true
+  timezone: Asia/Shanghai
+  captcha:
+    enabled: false
+    image:
+      enabled: true
+  # 接口加密配置
+  crypto:
+    enabled: false
+
+analysis:
+  indicatorAnalysis: false
+  moonShot:
+    accessToken:
+
+# 管理端口
+management:
+  endpoints:
+    web:
+      exposure:
+        # include: "*"
+        include: health,prometheus
+  metrics:
+    tags:
+      application: wangTemplate
+
+dromara:
+  # 文件存储配置
+  x-file-storage:
+    # 默认使用的存储平台
+    default-platform: local-plus-1
+    # 缩略图后缀，例如【.min.jpg】【.png】
+    thumbnail-suffix: ".min.jpg"
+    # 对应平台的配置写在这里，注意缩进要对齐
+    minio:
+      - platform: local-plus-1 # 存储平台标识
+        enable-storage: true # 启用存储
+        enable-access: true
+        domain: http://localhost:8000/file/ # 访问域名，注意“/”结尾，例如：http://minio.abc.com/abc/
+        base-path: file/ # 基础路径
+        path-patterns: /file/**
+        storage-path: ./storage
