@@ -10,10 +10,12 @@
 
 ## 配置
 
-可修改后端服务配置 `backend/config/application-prod.yml`。
+可修改后端服务配置 `backend/config/application-prod.yml` 及 Nginx 负载均衡配置 `nginx/server.conf`。
 
 ## 启动
 
 ```
 docker-compose up -d
 ```
+
+访问 `http://localhost:8500` 。

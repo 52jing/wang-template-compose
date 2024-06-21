@@ -55,7 +55,7 @@ dromara:
     # 缩略图后缀，例如【.min.jpg】【.png】
     thumbnail-suffix: ".min.jpg"
     # 对应平台的配置写在这里，注意缩进要对齐
-    minio:
+    local-plus:
       - platform: local-plus-1 # 存储平台标识
         enable-storage: true # 启用存储
         enable-access: true

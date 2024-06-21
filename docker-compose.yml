@@ -1,12 +1,12 @@
 version: "3"
 services:
   frontend:
-    image: temp-web:0.1
+    image: swr.cn-north-4.myhuaweicloud.com/wangboot/wang-template-admin:1.0.0
     ports:
       - "8001:80"
     restart: always
   backend:
-    image: temp:0.1
+    image: swr.cn-north-4.myhuaweicloud.com/wangboot/wang-template-backend:1.0.0
     ports:
       - "8000:8000"
     volumes:
