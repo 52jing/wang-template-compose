@@ -1,33 +1,33 @@
-<h4 align="right"><strong>English</strong> | <a href="./README_zh.md">简体中文</a></h4>
+<h4 align="right"><a href="./README.md">English</a> | <strong>简体中文</strong></h4>
 
 # Wang Template Compose
 
-## Introduction
+## 说明
 
-This project is for the rapid deployment of the WangTemplate report rendering platform.
+本项目用于快速部署 WangTemplate 报告生成平台。
 
-Frontend Repository:
+前端地址：
 
 - Github: [https://github.com/52jing/wang-template-admin](https://github.com/52jing/wang-template-admin)
 - Gitee: [https://gitee.com/i52jing/wang-template-admin](https://gitee.com/i52jing/wang-template-admin)
 
-Backend Repository:
+后端地址：
 
 - Github: [https://github.com/52jing/wang-template-backend](https://github.com/52jing/wang-template-backend)
 - Gitee: [https://gitee.com/i52jing/wang-template-backend](https://gitee.com/i52jing/wang-template-backend)
 
-## Preparation
+## 准备
 
-Please install Docker and Docker Compose first.
+请先安装 Docker 及 Docker Compose。
 
-## Configuration
+## 配置
 
-You can change the backend config file at `backend/config/application-prod.yml` and Nginx config file at `nginx/server.conf`.
+可修改后端服务配置 `backend/config/application-prod.yml` 及 Nginx 负载均衡配置 `nginx/server.conf`。
 
-## Start
+## 启动
 
 ```
 docker-compose up -d
 ```
 
-Request `http://localhost:8500` 。
+访问 `http://localhost:8500` 。
